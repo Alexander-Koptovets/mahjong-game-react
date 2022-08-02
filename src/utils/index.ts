@@ -4,7 +4,20 @@ export type CardType = {
     isVisible: boolean,
 }
 
-export const INTEGERS = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47];
+export const integers = (n: number) => {
+    const nums = [];
+
+    nextPrime:
+    for (let i = 2; i <= n; i++) {
+        for (let j = 2; j < i; j++) {
+            if (i % j == 0) continue nextPrime;
+        }
+
+        nums.push(i)
+    }
+    console.log(nums);
+    return [...nums, ...nums];
+}
 
 export const shuffle = (array: number[]) => {
     return array.sort(() => Math.random() - 0.5);

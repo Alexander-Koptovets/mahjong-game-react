@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { CardType, createCards, INTEGERS, shuffle } from "../../utils";
+import { CardType, createCards, shuffle, integers } from "../../utils";
 import { Card } from "../card";
 import { WrapperCards } from "../wrapperCards";
 import style from "./Style.module.css";
@@ -13,7 +13,7 @@ export const Mahjong: FC = () => {
     const [value, setValue] = useState<valueType[]>([]);
     const [start, setStart] = useState<boolean>(true)
 
-    const mixedNums = shuffle([...INTEGERS, ...INTEGERS]);
+    const mixedNums = shuffle(integers(50));
     const createdCards = createCards(mixedNums, true);
     const [cards, setCards] = useState(createdCards);
 
